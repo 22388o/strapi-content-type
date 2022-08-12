@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transactions",
+  "info": {
+    "singularName": "transaction",
+    "pluralName": "transactions",
+    "displayName": "Transaction",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "txid": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "settled",
+        "canceled"
+      ],
+      "required": true,
+      "default": "pending"
+    },
+    "customer": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::customer.customer"
+    },
+    "amount": {
+      "type": "float"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "transfer",
+        "deposit",
+        "withdraw"
+      ]
+    },
+    "currency": {
+      "type": "enumeration",
+      "enum": [
+        "BTC",
+        "BRL"
+      ]
+    },
+    "metadata": {
+      "type": "json"
+    },
+    "address": {
+      "type": "string"
+    },
+    "feerate": {
+      "type": "float"
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

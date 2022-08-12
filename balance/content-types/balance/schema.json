@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "balances",
+  "info": {
+    "singularName": "balance",
+    "pluralName": "balances",
+    "displayName": "Balance",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "balance": {
+      "type": "float",
+      "required": true,
+      "default": 0
+    },
+    "currency": {
+      "type": "enumeration",
+      "enum": [
+        "BTC",
+        "BRL"
+      ],
+      "default": "BTC",
+      "required": true
+    },
+    "customer": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::customer.customer"
+    }
+  }
+}
