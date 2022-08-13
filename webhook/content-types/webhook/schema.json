@@ -4,10 +4,11 @@
   "info": {
     "singularName": "webhook",
     "pluralName": "webhooks",
-    "displayName": "Webhook"
+    "displayName": "Webhook",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
