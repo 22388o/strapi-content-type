@@ -33,7 +33,8 @@
       "target": "api::customer.customer"
     },
     "amount": {
-      "type": "float"
+      "type": "float",
+      "required": true
     },
     "type": {
       "type": "enumeration",
@@ -41,14 +42,16 @@
         "transfer",
         "deposit",
         "withdraw"
-      ]
+      ],
+      "required": true
     },
     "currency": {
       "type": "enumeration",
       "enum": [
         "BTC",
         "BRL"
-      ]
+      ],
+      "required": true
     },
     "metadata": {
       "type": "json"
@@ -61,6 +64,16 @@
     },
     "description": {
       "type": "string"
+    },
+    "network": {
+      "type": "enumeration",
+      "enum": [
+        "onchain",
+        "lightning",
+        "bank",
+        "internal"
+      ],
+      "required": true
     }
   }
 }

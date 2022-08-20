@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trades",
+  "info": {
+    "singularName": "trade",
+    "pluralName": "trades",
+    "displayName": "Trade",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "txid": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "base_amount": {
+      "type": "float"
+    },
+    "feerate": {
+      "type": "float"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "SELL",
+        "BUY"
+      ]
+    },
+    "price": {
+      "type": "float"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "settled",
+        "canceled"
+      ]
+    },
+    "customer": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::customer.customer"
+    },
+    "base": {
+      "type": "enumeration",
+      "enum": [
+        "BTC"
+      ]
+    },
+    "quote": {
+      "type": "enumeration",
+      "enum": [
+        "BRL"
+      ]
+    },
+    "quote_amount": {
+      "type": "float"
+    }
+  }
+}

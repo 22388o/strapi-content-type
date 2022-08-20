@@ -1,0 +1,78 @@
+{
+  "kind": "collectionType",
+  "collectionName": "banks",
+  "info": {
+    "singularName": "bank",
+    "pluralName": "banks",
+    "displayName": "Bank",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "txid": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "address": {
+      "type": "text",
+      "required": true
+    },
+    "currency": {
+      "type": "enumeration",
+      "enum": [
+        "BRL"
+      ],
+      "required": true
+    },
+    "amount": {
+      "type": "float",
+      "required": true
+    },
+    "customer": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::customer.customer"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "deposit",
+        "withdraw"
+      ],
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "settled",
+        "canceled"
+      ],
+      "required": true,
+      "default": "pending"
+    },
+    "feerate": {
+      "type": "float",
+      "required": true
+    },
+    "method": {
+      "type": "string",
+      "required": true
+    },
+    "proof": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "proofDetails": {
+      "type": "text"
+    }
+  }
+}
